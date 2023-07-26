@@ -96,5 +96,3 @@ resource "aws_instance" "dispatch" {
     Name = "dispatch"
   }
 }
-
-}
