@@ -1,14 +1,3 @@
-data "aws_ami" "centos" {
-  most_recent = true
-  name_regex  = "Centos-8-DevOps-Practice"
-  owners      = ["973714476881"]
-}
-
-data "aws_security_group" "allow-all" {
-  name = "allow-all"
-}
-
-
 resource "aws_instance" "instance" {
   for_each               = var.components
   ami                    = data.aws_ami.centos.image_id
@@ -18,6 +7,22 @@ resource "aws_instance" "instance" {
   tags = {
     Name = each.value[ "name" ]
   }
+  provisioner "remote-exec" {
+
+    connection {
+      type     = "ssh"
+      user     = "centos"
+      password = "DevOps321"
+      host     = self.private_ip
+    }
+    inline = [
+      "rm -rf roboshop1-shell",
+      "git clone https://github.com/akr9757/roboshop1-shell.git",
+      "cd roboshop1-shell",
+      "sudo bash ${each.value["name"]}.sh"
+    ]
+  }
+
 }
 
 resource "aws_route53_record" "records" {
