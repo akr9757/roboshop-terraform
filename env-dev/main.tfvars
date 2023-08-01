@@ -35,7 +35,7 @@ app_servers = {
 
 env = "dev"
 
-datbase_servers = {
+database_servers = {
   mongodb = {
     name          = "mongodb"
     instance_type = "t3.small"
