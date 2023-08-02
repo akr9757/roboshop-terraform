@@ -19,6 +19,7 @@ resource "null_resource" "provisioner" {
      user     = "centos"
      password = "DevOps321"
      host     = aws_instance.instance.private_ip
+     
    }
    inline = [
     "rm -rf roboshop1-shell",
