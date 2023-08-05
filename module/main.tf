@@ -75,7 +75,7 @@ resource "aws_iam_role_policy" "ssm-ps-policy" {
           "ssm:GetParameter",
           "kms:Decrypt"
         ],
-        "Resource": "arn:aws:ssm:us-east-1:597067333039:parameter/${env}.${var.component_name}.*"
+        "Resource": "arn:aws:ssm:us-east-1:597067333039:parameter/${var.env}.${var.component_name}.*"
       },
       {
         "Sid": "VisualEditor1",
