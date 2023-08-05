@@ -9,17 +9,16 @@ resource "aws_instance" "instance" {
 }
 
 resource "null_resource" "provisioner" {
- depends_on = [aws_instance.instance, aws_route53_record.records]
- provisioner "remote-exec" {
+  depends_on = [aws_instance.instance, aws_route53_record.records]
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "centos"
+      password = "DevOps321"
+      host     = aws_instance.instance.private_ip
+    }
 
-   connection {
-     type     = "ssh"
-     user     = "centos"
-     password = "DevOps321"
-     host     = aws_instance.instance.private_ip
-   }
-
-   inline = var.app_type == "db" ? local.db_commands : local.app_commands
+    inline = var.app_type == "db" ? local.db_commands : local.app_commands
   }
 }
 
