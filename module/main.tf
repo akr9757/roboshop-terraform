@@ -72,16 +72,18 @@ resource "aws_iam_role_policy" "ssm-ps-policy" {
         "Sid": "VisualEditor0",
         "Effect": "Allow",
         "Action": [
-          "kms:Decrypt",
           "ssm:GetParameterHistory",
           "ssm:GetParametersByPath",
           "ssm:GetParameters",
           "ssm:GetParameter"
         ],
-        "Resource": [
-          "arn:aws:ssm:us-east-1:597067333039:parameter/${var.env}.${var.component_name}.*",
-          "arn:aws:kms:us-east-1:*:key/arn:aws:kms:us-east-1:597067333039:key/7324a4aa-43b2-47be-98cf-a76f8acbc746"
-        ]
+        "Resource": "arn:aws:ssm:us-east-1:597067333039:parameter/${var.env}.${var.component_name}.*"
+      },
+      {
+        "Sid": "VisualEditor1",
+        "Effect": "Allow",
+        "Action": "ssm:DescribeParameters",
+        "Resource": "*"
       }
     ]
   })
