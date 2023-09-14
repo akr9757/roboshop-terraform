@@ -11,10 +11,10 @@ locals {
     "ansible-pull -i localhost, -U https://github.com/akr9757/roboshop-ansible.git roboshop.yml -e role_name=${var.component_name} -e env=${var.env}"
   ]
   db_tags = {
-    Nmae = "${var.component_name}-${var.env}"
+    Name = "${var.component_name}-${var.env}"
   }
   app_tags = {
-    Nmae = "${var.component_name}-${var.env}"
+    Name = "${var.component_name}-${var.env}"
     Monitor = "true"
   }
 }
