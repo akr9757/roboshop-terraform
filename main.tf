@@ -15,4 +15,3 @@ module "web" {
   instance_type = each.value["instance_type"]
   subnet_id = element(lookup(lookup(lookup(module.vpc, "main", null), each.value["subnet_name"], null), "subnet_ids", null), 0)
 }
-element(lookup(lookup(module.vpc, each.value["subnet_name"], null), "subnet_ids", null), 0)
