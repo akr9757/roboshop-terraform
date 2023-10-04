@@ -1,3 +1,3 @@
 output "vpc" {
-  value = lookup(module.vpc, "main", null)
+  value = module.vpc
 }
