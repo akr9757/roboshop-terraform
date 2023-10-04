@@ -7,10 +7,6 @@ module "vpc" {
   env        = var.env
 }
 
-output "vpc" {
-  value = module.vpc
-}
-
 module "web" {
   source = "git::https://github.com/raghudevopsb72/tf-module-app.git"
 
