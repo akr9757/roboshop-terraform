@@ -17,5 +17,5 @@ module "vpc" {
 #}
 
 output "subnet_id" {
-  value = module.vpc
+  value = lookup(module.vpc, "main", null)
 }
