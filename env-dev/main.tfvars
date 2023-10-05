@@ -50,3 +50,4 @@ app = {
     max_size         = 10
     min_size         = 2
   }
+}
