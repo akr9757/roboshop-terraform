@@ -13,7 +13,7 @@ module "vpc" {
 }
 
 
-module "docdb" {
+module "app" {
   source = "git::https://github.com/akr9757/tf-module-app.git"
 
   for_each         = var.app
@@ -33,7 +33,7 @@ module "docdb" {
 }
 
 
-module "app" {
+module "docdb" {
   source = "git::https://github.com/akr9757/tf-module-docdb.git"
 
   for_each         = var.docdb
