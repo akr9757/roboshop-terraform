@@ -40,7 +40,7 @@ module "app" {
   subnets = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
   allow_db_cidr = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
 
-  engine_version             = each.value["engine_version"}
+  engine_version             = each.value["engine_version"]
   env          = var.env
   tags         = local.tags
   vpc_id       = local.vpc_id
