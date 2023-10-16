@@ -65,6 +65,62 @@ app = {
     dns_name          = "dev"
     parameters       = ["docdb"]
   }
+  user = {
+    name             = "user"
+    instance_type    = "t3.small"
+    subnet_name      = "app"
+    allow_app_cidr   = "app"
+    app_port         = 8080
+    desired_capacity = 1
+    max_size         = 10
+    min_size         = 1
+    listener_priority = 2
+    lb_type = "private"
+    dns_name          = "dev"
+    parameters       = ["docdb"]
+  }
+  cart = {
+    name             = "cart"
+    instance_type    = "t3.small"
+    subnet_name      = "app"
+    allow_app_cidr   = "app"
+    app_port         = 8080
+    desired_capacity = 1
+    max_size         = 10
+    min_size         = 1
+    listener_priority = 3
+    lb_type = "private"
+    dns_name          = "dev"
+    parameters       = []
+  }
+  payment = {
+    name             = "payment"
+    instance_type    = "t3.small"
+    subnet_name      = "app"
+    allow_app_cidr   = "app"
+    app_port         = 8080
+    desired_capacity = 1
+    max_size         = 10
+    min_size         = 1
+    listener_priority = 4
+    lb_type = "private"
+    dns_name          = "dev"
+    parameters       = []
+  }
+  shipping = {
+    name             = "shipping"
+    instance_type    = "t3.small"
+    subnet_name      = "app"
+    allow_app_cidr   = "app"
+    app_port         = 8080
+    desired_capacity = 1
+    max_size         = 10
+    min_size         = 1
+    listener_priority = 1
+    lb_type = "private"
+    dns_name          = "dev"
+    parameters       = ["rds"]
+  }
 }
 
 
