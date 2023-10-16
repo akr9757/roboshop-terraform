@@ -49,6 +49,7 @@ app = {
     listener_priority = 1
     lb_type = "public"
     dns_name          = "dev"
+    parameters       = []
   }
   catalogue = {
     name             = "catalogue"
@@ -62,6 +63,7 @@ app = {
     listener_priority = 1
     lb_type = "private"
     dns_name          = "dev"
+    parameters       = ["docdb"]
   }
 }
 
