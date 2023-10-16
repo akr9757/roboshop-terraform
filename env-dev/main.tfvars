@@ -4,6 +4,10 @@ default_vpc_id   = "vpc-02f481ad4c25971d0"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-0eb5c7f12e35e3992"
 kms_arn = "arn:aws:kms:us-east-1:726981961849:key/5816e42f-a81c-499f-b64a-cfe36d3610ba"
+domain_name = "akrdevopsb72.online"
+domain_id = "Z00062821VP7F1RRN67KU"
+
+
 vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -42,6 +46,8 @@ app = {
     desired_capacity = 1
     max_size         = 10
     min_size         = 1
+    listener_priority = 1
+    lb_type = "public"
   }
   catalogue = {
     name             = "catalogue"
@@ -52,6 +58,8 @@ app = {
     desired_capacity = 1
     max_size         = 10
     min_size         = 1
+    listener_priority = 1
+    lb_type = "private"
   }
 }
 
