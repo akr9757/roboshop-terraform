@@ -48,6 +48,7 @@ app = {
     min_size         = 1
     listener_priority = 1
     lb_type = "public"
+    dns_name          = "dev"
   }
   catalogue = {
     name             = "catalogue"
@@ -60,6 +61,7 @@ app = {
     min_size         = 1
     listener_priority = 1
     lb_type = "private"
+    dns_name          = "dev"
   }
 }
 
