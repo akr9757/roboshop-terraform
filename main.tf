@@ -39,7 +39,7 @@ module "rds" {
   instance_class = each.value["instance_class"]
 
   env          = var.env
-  tags         = merge(local.tags, { Monitor = "true"})
+  tags         = local.tags
   vpc_id       = local.vpc_id
   kms_arn = var.kms_arn
 }
@@ -114,7 +114,7 @@ module "app" {
 
   env          = var.env
   bastion_cidr = var.bastion_cidr
-  tags         = local.tags
+  tags         = merge(local.tags, { Monitor = "true"})
   domain_name  = var.domain_name
   domain_id    = var.domain_id
   kms_arn      = var.kms_arn
