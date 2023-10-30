@@ -23,6 +23,7 @@ pipeline {
         sh 'terraform init -auto-approve -var-file=env-${env}/main.tfvars'
       }
     }
+
   }
 
   post {
