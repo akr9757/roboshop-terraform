@@ -18,9 +18,9 @@ pipeline {
 
 
     stage {'terraform apply'}
-        steps {
-          sh 'terraform init -auto-approve -var-file=env-${env}/main.tfvars'
-        }
+      steps {
+        sh 'terraform init -auto-approve -var-file=env-${env}/main.tfvars'
+      }
     }
   }
 
@@ -29,5 +29,4 @@ pipeline {
       cleanws()
     }
   }
-
 }
