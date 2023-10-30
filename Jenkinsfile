@@ -11,13 +11,14 @@ pipeline {
   }
 
   stages {
-    stage {'Terraform INIT'}
+
+    stage('Terraform INIT')
       steps {
         sh 'terraform init -backend-config=env-${env}/state.tfvars'
       }
     }
 
-    stage {'Terraform Apply'}
+    stage('Terraform Apply')
       steps {
         sh 'terraform init -auto-approve -var-file=env-${env}/main.tfvars'
       }
