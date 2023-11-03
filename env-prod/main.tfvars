@@ -1,4 +1,4 @@
-env              = "dev"
+env              = "prod"
 bastion_cidr     = ["172.31.25.45/32"]
 monitor_cidr     = ["172.31.25.20/32"]
 default_vpc_id   = "vpc-02f481ad4c25971d0"
@@ -63,7 +63,7 @@ app = {
     min_size         = 1
     listener_priority = 1
     lb_type = "private"
-    dns_name          = "dev"
+    dns_name          = "prod"
     parameters       = ["docdb"]
   }
   user = {
@@ -77,7 +77,7 @@ app = {
     min_size         = 1
     listener_priority = 2
     lb_type = "private"
-    dns_name          = "dev"
+    dns_name          = "prod"
     parameters       = ["docdb"]
   }
   cart = {
@@ -91,7 +91,7 @@ app = {
     min_size         = 1
     listener_priority = 3
     lb_type = "private"
-    dns_name          = "dev"
+    dns_name          = "prod"
     parameters       = []
   }
   payment = {
@@ -105,7 +105,7 @@ app = {
     min_size         = 1
     listener_priority = 4
     lb_type = "private"
-    dns_name          = "dev"
+    dns_name          = "prod"
     parameters       = []
   }
   shipping = {
@@ -119,7 +119,7 @@ app = {
     min_size         = 1
     listener_priority = 5
     lb_type = "private"
-    dns_name          = "dev"
+    dns_name          = "prod"
     parameters       = ["rds"]
   }
 }
