@@ -150,7 +150,7 @@ resource "null_resource" "load" {
     }
 
     inline = [
-      "curl -s https://github.com/linuxautomations/labautomation/blob/master/tools/docker/install.sh | bash"
+      "curl -s https://github.com/linuxautomations/labautomation/blob/master/tools/docker/install.sh | bash",
       "docker pull robotshop/rs-load"
     ]
   }
