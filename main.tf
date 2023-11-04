@@ -144,15 +144,17 @@ resource "null_resource" "load" {
   provisioner "remote-exec" {
 
     connection {
-      host = aws_instance.load.private_ip
-      user = "root"
+      host     = aws_instance.load.private_ip
+      user     = "root"
       password = "DevOps321"
     }
 
     inline = [
-      "curl -s https://github.com/linuxautomations/labautomation/blob/master/tools/docker/install.sh | bash",
+      "curl -s https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/docker/install.sh | bash",
       "docker pull robotshop/rs-load"
     ]
+
+
   }
 }
 
